@@ -7,4 +7,6 @@ st.write("""
 Which one is the best?
 """)
 
-dataset_name = st.selectbox("Select Dataset") 
+dataset_name = st.sidebar.selectbox("Select Dataset", ("Iris", "Breast Cancer", "Wine"))
+
+st.write(dataset_name) 
