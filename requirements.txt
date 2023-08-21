@@ -103,12 +103,14 @@ pandas==1.5.3
 pandas-stubs==2.0.2.230605
 parso==0.8.3
 partd==1.4.0
+patsy==0.5.3
 pi==0.1.2
 pickleshare==0.7.5
 Pillow==9.5.0
 pipenv==2023.7.23
 platformdirs==3.10.0
 plotly==5.16.1
+plotly-express==0.4.1
 pluggy==1.2.0
 polars==0.18.15
 prompt-toolkit==3.0.39
@@ -164,9 +166,11 @@ soupsieve==2.4.1
 sqlglot==17.14.2
 st-pages==0.4.3
 stack-data==0.6.2
+statsmodels==0.14.0
 streamlit==1.25.0
 streamlit-aggrid==0.3.4.post3
 structlog==23.1.0
+tabulate==0.9.0
 tenacity==8.2.2
 tensorboard==2.13.0
 tensorboard-data-server==0.7.1
