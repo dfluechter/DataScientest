@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split, RandomizedSearchCV, GridSe
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from scipy.stats import randint as sp_randint, uniform as sp_randFloat
-#from st_aggrid import AgGrid
+from st_aggrid import AgGrid
 
 # Function to load data and cache it
 @st.cache_data
