@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split, RandomizedSearchCV, GridSe
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from scipy.stats import randint as sp_randint, uniform as sp_randFloat
+from random import *
 
 # Function to load data and cache it
 @st.cache_data
@@ -63,8 +64,8 @@ def main():
         st.header("STA")
         
         if st.checkbox("Tabular Data"):
-            #st.table(data.head(150))
-            AgGrid(data.head(150))
+            st.table(data.head(50))
+            #AgGrid(data.head(150))
         st.header("Statistical Summary of the Dataframe")
         if st.checkbox("Statistics"):
             st.table(data.describe())
@@ -152,11 +153,11 @@ def main():
         
         st.header("Predict STA")
         #year_input = st.number_input("Enter a year:", min_value=int(data["year"].min()), max_value=int(data["year"].max()), step=1)
-        year_input = st.number_input("Enter a year:", min_value=2020, max_value=2030, step=1)
+        year_input = st.number_input("Enter a year:", min_value=2025, max_value=2050, step=1)
         
         avg_values = data.drop(columns=["sta", "year"]).mean()
         prediction_input = pd.DataFrame({
-            "country_id": [0],
+            "country_id": [randint(0, 42)],
             "year": [year_input]
         })
         
