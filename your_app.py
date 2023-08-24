@@ -152,7 +152,8 @@ def main():
         st.write(f"R2: {gb_r2:.2f}")
         
         st.header("Predict STA")
-        year_input = st.number_input("Enter a year:", min_value=int(data["year"].min()), max_value=int(data["year"].max()), step=1)
+        #year_input = st.number_input("Enter a year:", min_value=int(data["year"].min()), max_value=int(data["year"].max()), step=1)
+        year_input = st.number_input("Enter a year:", min_value="2020", max_value="2030", step=1)
         
         avg_values = data.drop(columns=["sta", "year"]).mean()
         prediction_input = pd.DataFrame({
