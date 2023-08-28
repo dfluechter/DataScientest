@@ -39,7 +39,13 @@ def create_bar_plot(data):
     fig, ax = plt.subplots(figsize=(3.5, 2))
     sns.barplot(x="year",
                 y="sta",
-                data=data)
+                data=data,
+                ax=ax)
+    x_labels = ax.set_xticklabels(ax.get_xticklabels(), rotation=90, ha='right')
+    for label in x_labels:
+        label.set_fontsize(8)  # Passe die Schriftgröße an
+        
+    ax.set_xticks(ax.get_xticks())  # Setze die X-Achsenticks
     st.pyplot(fig)
 
 # Function to create and display histogram
@@ -131,11 +137,15 @@ def main():
         X = data.drop(columns=["sta"])
         y = data["sta"]
         train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.25, random_state=SEED)
+        optimal_parameters = {
+            'learning_rate': 0.1,
+            'subsample': 0.9,
+            'n_estimators': 300,
+            'max_depth': 5,
+        }
         gbr = GradientBoostingRegressor(
             loss='squared_error',
-            learning_rate=0.1,
-            n_estimators=300,
-            max_depth=5,
+            **optimal_parameters,
             random_state=SEED,
             max_features=11
         )
